@@ -1,5 +1,7 @@
 import React from 'react'
 import { MenuList } from '../helpers/MenuList';
+import MenuItems from '../components/MenuItems';
+import '../styles/Menu.css';
 
 function Menu() {
   return (
@@ -7,8 +9,9 @@ function Menu() {
       <h1 className='menuTitle'>Our Menu</h1>
       <div className='menuList'>
         {MenuList.map((menuItem, key) => {
-        return <div>{menuItem.name}</div>;
-      })}</div>
+        return <MenuItems key={key} image={menuItem.image} name={menuItem.name} price={menuItem.price} />
+      })}
+      </div>
     </div>
   )
 }
